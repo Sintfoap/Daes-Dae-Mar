@@ -1,0 +1,45 @@
+# Glossary — Wheel of Time Terms → Game Systems
+
+A quick-reference map from setting vocabulary to what it means mechanically.
+Full rules for each live in their linked doc; this page exists so any doc
+can use WoT terms without re-explaining them.
+
+| WoT term | Game meaning | Detailed in |
+|---|---|---|
+| The One Power | The magic resource/energy channelers draw on to fuel weaves | `06-magic-and-channeling.md` |
+| Saidin | The male half of the Power. Tainted by the Dark One — channeling it accumulates madness risk | `06-magic-and-channeling.md` |
+| Saidar | The female half of the Power. Untainted, but overreach risks burnout | `06-magic-and-channeling.md` |
+| Channeler | Any unit that can draw on the One Power — a distinct unit archetype, not a faction-specific unit | `07-units.md` |
+| Weave | A specific effect a channeler can produce (a "spell") — offense, control, utility, or detection | `06-magic-and-channeling.md` |
+| Angreal / Sa'angreal | Relic items that amplify a channeler's strength — a strategic resource/equipment slot | `06-magic-and-channeling.md`, `08-economy-and-resources.md` |
+| Ter'angreal | Relic items with a fixed, specific effect (not raw amplification) — unique items/abilities | `06-magic-and-channeling.md` |
+| Taint / going mad | The accumulating risk/consequence of channeling saidin | `06-magic-and-channeling.md` |
+| Stilling / gentling | Permanent loss of ability to channel — an endpoint consequence, not a resource drain | `06-magic-and-channeling.md` |
+| The True Power | The Dark One's own power — extremely rare, extremely risky, Shadow-exclusive | `06-magic-and-channeling.md` |
+| White Tower / Aes Sedai | Female channeler faction; political + magical power, Ajah specializations | `05-factions.md` |
+| Black Tower / Asha'man | Male channeler faction; martial focus, elevated madness stakes | `05-factions.md` |
+| Black Ajah | Aes Sedai secretly serving the Shadow — a subversion/infiltration mechanic, not a separate playable faction (initially) | `05-factions.md` |
+| Children of the Light / Whitecloaks | Zealous anti-channeler military order; no channelers, ever | `05-factions.md` |
+| Seanchan | Invading empire; channelers are collared weapons (damane) controlled by handlers (sul'dam) | `05-factions.md` |
+| Damane / sul'dam | Collared channeler + handler pair — a signature Seanchan unit type | `05-factions.md`, `07-units.md` |
+| Aiel | Desert warrior clans; elite light infantry, no cavalry, terrain specialists | `05-factions.md` |
+| Trollocs / Myrddraal (Fades) | Shadow's rank-and-file horde and its fear-inducing commanders | `05-factions.md` |
+| Dreadlord | Human channeler serving the Shadow — the Shadow's channeler unit type | `05-factions.md`, `07-units.md` |
+| Forsaken | Named, extremely powerful individual Shadow agents — hero-tier units | `07-units.md` |
+| Borderlands (Shienar, Malkier, Kandor, Arafel) | Human nations bordering the Blight; heavy cavalry, anti-Shadowspawn specialists | `05-factions.md` |
+| The Blight | Corrupted Shadow-controlled territory — a strategic map region with unique rules | `03-strategic-layer.md` |
+| Ogier | Long-lived, powerful but conflict-averse people; rare recruits, Waygate access | `05-factions.md` |
+| Waygate / the Ways | Fast-travel network — a strategic-layer movement mechanic | `03-strategic-layer.md` |
+| Gateway (Traveling) | Channeler-created instant travel — high-level weave with strategic implications | `06-magic-and-channeling.md` |
+| Atha'an Miere / Windfinders | Sea Folk; weather-channeling, naval specialists | `05-factions.md` |
+| Wolfbrother | Human with a mental bond to wolves — a hero/unit trait, not a faction | `07-units.md` |
+| Aes Sedai bond (Warder) | A channeler-to-warrior bond granting mutual benefits — a hero pairing mechanic | `07-units.md` |
+| Ta'veren | Individuals fate bends around — a rare, powerful hero trait with battle/event-swaying effects | `07-units.md` |
+| Balefire | Reality-unmaking weave of last resort — an extreme, high-risk/high-consequence weave | `06-magic-and-channeling.md` |
+| Compulsion | Mind-control weave, forbidden/monstrous even among Darkfriends | `06-magic-and-channeling.md` |
+| The Horn of Valere | Artifact that calls forth legendary heroes — a campaign-level relic/event | `09-campaign-and-progression.md` |
+| The Last Battle (Tarmon Gai'don) | The setting's ultimate endgame — a possible campaign victory/endgame framing | `09-campaign-and-progression.md` |
+
+Add to this table whenever a new WoT term gets a mechanical meaning
+somewhere else in the docs — this file should always be able to answer
+"what does that word actually *do* in this game?"
