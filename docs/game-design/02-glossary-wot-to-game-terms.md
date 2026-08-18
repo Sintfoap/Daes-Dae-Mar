@@ -38,7 +38,8 @@ can use WoT terms without re-explaining them.
 | Gateway (Traveling) | Channeler-created instant travel — high-level weave with strategic implications | `06-magic-and-channeling.md` |
 | Atha'an Miere / Windfinders | Sea Folk; weather-channeling, naval specialists | `05-factions.md` |
 | Wolfbrother | Human with a mental bond to wolves — a hero/unit trait, not a faction | `07-units.md` |
-| Aes Sedai bond (Warder) | A channeler-to-warrior bond granting mutual benefits — a hero pairing mechanic | `07-units.md` |
+| Warder | White Tower's line infantry, in two tiers: generic **Warder Companies** (squad-scale line infantry, elite-tagged) and individually **Bonded Warders** (individual-scale, an optional upgrade paired to one Aes Sedai) | `07-units.md`, `docs/decisions/0008-white-tower-warder-tiers.md` |
+| Aes Sedai bond (Warder) | The channeler-to-warrior bond specifically — an optional upgrade granting mutual benefits and a mutual-loss penalty, not a default every Aes Sedai has | `07-units.md` |
 | Ta'veren | Individuals fate bends around — a rare, powerful hero trait with battle/event-swaying effects | `07-units.md` |
 | Balefire | Reality-unmaking weave of last resort — an extreme, high-risk/high-consequence weave | `06-magic-and-channeling.md` |
 | Compulsion | Mind-control weave, forbidden/monstrous even among Darkfriends | `06-magic-and-channeling.md` |

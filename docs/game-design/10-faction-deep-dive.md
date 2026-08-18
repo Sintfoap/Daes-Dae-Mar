@@ -39,6 +39,14 @@ them in one pass — these are meant to be argued through, not checklisted.
 
 ## White Tower (Aes Sedai)
 
+> **Roster shape resolved:** the all-individual-scale-army balance
+> concern that kicked off this discussion is answered by
+> `docs/decisions/0008-white-tower-warder-tiers.md` — a four-tier roster
+> (Tower Guard, Warder Company, Aes Sedai, optional Bonded Warder
+> upgrade). See `07-units.md`'s White Tower worked example. This resolves
+> most of §3 below; the remaining §3 bullets (Ajah-differentiated combat
+> stats) are still open.
+
 ### 1. Identity & fantasy
 - What's the one-sentence pitch? Something like "a political-magical
   superpower where your units are rare and precious, and your real
@@ -67,17 +75,16 @@ them in one pass — these are meant to be argued through, not checklisted.
   event that could split the player's own faction, echoing the books)?
   Worth floating even if it's a Phase 5+ idea, since it changes how
   fragile White Tower is meant to feel.
-- Warders: bonded 1:1 to an Aes Sedai (`07-units.md` mentions the bond
-  mechanic) — does losing a bonded Warder do anything to the Aes Sedai
-  (canon: a real shock, sometimes fatal)? Should that cut both ways?
+- **Resolved (0008):** Bonded Warders are an optional upgrade, not every
+  Aes Sedai's default, and losing one does cut both ways — a real
+  mutual-loss penalty on the pair, not just a stat loss on one side.
 
 ### 3. Tactical layer specifics
-- Roster wishlist beyond the Aes Sedai channeler unit itself: Warders
-  (elite melee, bonus near their bonded Aes Sedai), Tower Guard/city
-  levies (baseline infantry) — is that the whole roster, deliberately
-  thin, forcing White Tower to lean on allied/mercenary levies to field a
-  "real" army? That would be a strong, distinctive answer to "how thin is
-  too thin."
+- **Resolved (0008):** roster is four tiers — Tower Guard, Warder
+  Company (squad-scale, elite-tagged, the actual line-holding answer),
+  Aes Sedai (individual-scale), and the optional Bonded Warder upgrade —
+  not the thin two-piece roster originally sketched. See `07-units.md`'s
+  White Tower worked example for the composition target.
 - Should some Ajahs fight more directly than others (Green historically
   battle-oriented) while others (Brown, White) are almost never on a
   front line without heavy protection? If so, does that mean different

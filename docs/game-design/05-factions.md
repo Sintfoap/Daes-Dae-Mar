@@ -30,12 +30,19 @@ answer to all four of these, or it isn't ready to design units for yet:
   Blue = causes/intrigue, etc.)
 - **Strategic hook:** Recruits and moves by influence and politics as much
   as by gold; can act at range through Aes Sedai sent to other courts.
-- **Tactical hook:** Small numbers of very powerful channelers plus modest
-  conventional forces (Warders, levies) — battles are about protecting a
-  handful of high-value units, not attrition.
+- **Tactical hook:** A four-tier roster (`07-units.md`'s White Tower
+  worked example, `docs/decisions/0008-white-tower-warder-tiers.md`) —
+  cheap Tower Guard and elite Warder Companies do the actual
+  line-holding, with a well-protected minority of individual-scale Aes
+  Sedai providing the real firepower, occasionally paired with a
+  personally Bonded Warder as a rare, high-value/high-risk upgrade.
+  Battles are about protecting that caster minority behind a real wall,
+  not attrition between two equal-scale armies.
 - **Risk/cost:** Saidar burnout risk on overreach; politically fractious
-  (Black Ajah subversion risk, see `03-strategic-layer.md`); relatively
-  weak in raw troop numbers.
+  (Black Ajah subversion risk, see `03-strategic-layer.md`); Aes Sedai are
+  expensive and slow to replace relative to the mundane tiers, so losses
+  among the caster minority are felt for a long time, not just for one
+  battle.
 
 ### Children of the Light (Whitecloaks)
 - **Power source:** None — explicitly zero channelers, ever. Strength is

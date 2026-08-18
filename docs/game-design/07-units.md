@@ -87,6 +87,61 @@ are.
   uncontrollable — makes protecting (or targeting) the handler a real
   tactical thread distinct from any other channeler unit in the game.
 
+## Worked example: White Tower's roster shape
+
+White Tower was the first faction to get real balancing scrutiny
+(`docs/decisions/0008-white-tower-warder-tiers.md`), because an army built
+entirely from individual-scale Channeler tokens runs into a hard problem:
+per the Representation and scale rule above, every one of those tokens is
+exactly one person, while an opposing faction's army is mostly squad-scale
+companies. Same token count, wildly mismatched actual manpower — bad for
+the fiction and bad for balance (fragile individuals need absurd per-token
+stats to not just evaporate against a company).
+
+The fix is that **Warders exist at two tiers**, not one, and White
+Tower's roster is built in layers of rising cost and fragility:
+
+**Tower Guard** (Line infantry, squad-scale)
+- Cheap, fast to recruit, unremarkable stats — ordinary city levies and
+  Tower staff-at-arms. Board presence and a first line to absorb early
+  losses, so Warder Companies aren't spent as disposable meat shields.
+
+**Warder Company** (Line infantry, squad-scale, elite tags)
+- An organized body of trained Warders operating as a military unit — not
+  tied to any specific Aes Sedai. Better stats than Tower Guard and than a
+  typical faction's basic line infantry (Warder training is exceptional),
+  costed and recruited accordingly. This is White Tower's actual
+  line-holding answer — the "main infantry" the roster is built around.
+
+**Aes Sedai** (Channeler, individual-scale)
+- Recruited (slowly — see the training-pipeline question in
+  `10-faction-deep-dive.md`) rather than trained instantly like a company.
+  Fragile in melee, powerful at range/weaves, expensive relative to a
+  whole Warder Company. The precious, protected core of the army.
+
+**Bonded Warder** (Hero/Commander, individual-scale — an *optional
+upgrade*, not a default)
+- A specific Warder personally bonded to a specific Aes Sedai, purchased
+  as a strategic-layer upgrade on an existing Aes Sedai unit rather than
+  something every channeler starts with — keeps bonded pairs rare and
+  meaningful instead of mandatory overhead on every Aes Sedai token.
+  Grants real mutual combat/defense bonuses while both live, and a real
+  mutual-loss penalty if either half dies, is captured, Stilled, or the
+  bond is otherwise severed — protecting a bonded pair should read as
+  higher-stakes than protecting either half alone.
+
+**Composition target** (a Phase 2/6 number to pressure-test, not a locked
+formula): a well-built White Tower army should skew **majority Tower
+Guard/Warder Company tokens, with Aes Sedai as a well-protected
+minority** — roughly 60–70% mundane/elite-mundane to 20–30% actual
+channelers is a reasonable starting target. The point isn't the exact
+split; it's that White Tower should *not* read as an all-caster army by
+token count, even though the caster minority is where the interesting
+decisions live. Terrain matters here too: a channeler backline on a hill
+behind a Warder Company screen (per the deployment trade-offs in
+`04-tactical-battle-layer.md`) is the intended default shape of a White
+Tower deployment, not an incidental one.
+
 ## Heroes and named units
 
 Ta'veren, Wolfbrothers, Forsaken, clan chiefs, and similar named
@@ -105,7 +160,11 @@ Full hero design (leveling, acquisition, loss consequences) belongs in
 - Full per-faction rosters — populated as each faction is greenlit (see
   `05-factions.md` build-queue checklist)
 - Exact numeric balancing — a Phase 6 concern, not a Phase 1 blocker
-- Whether unit *upgrades* exist (a unit gaining equipment/veterancy over a
-  campaign) or units are strictly recruited-at-fixed-stats — recommend
-  deferring this to `09-campaign-and-progression.md` since it's really a
-  campaign-structure question more than a unit-design one
+- Whether unit *upgrades* exist generally (a unit gaining equipment/
+  veterancy over a campaign) beyond the Bonded Warder precedent above —
+  still deferred to `09-campaign-and-progression.md` as a
+  campaign-structure question, but the Bonded Warder upgrade shows the
+  pattern works for at least one case
+- Exact cost/time numbers for the Aes Sedai training pipeline and Bonded
+  Warder upgrade cost — Phase 6 balance pass; tracked alongside the White
+  Tower composition target above
