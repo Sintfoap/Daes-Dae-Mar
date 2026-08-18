@@ -36,40 +36,96 @@ armies, physics, pathfinding at the level of individual soldiers).
   | Fortification / wall | Hard to cross without siege capability; strong defense bonus to units behind it |
   | Road | Movement bonus |
 
-## Orientation: bottom-to-top, not left-to-right
+## Orientation: driven by the strategic attack, not a fixed axis
 
-The player's forces deploy in the **south** hexes of the grid; the enemy
-deploys in the **north** hexes. This is a deliberate departure from the
-traditional left-right clash for a few concrete reasons:
+**Decision (`docs/decisions/0006-strategic-driven-entry-and-deployment.md`):**
+there is no fixed "player enters south, enemy enters north." Instead, the
+edge an army enters the battlefield from is determined by **where it
+attacked from on the strategic map.** Attacking a province from its
+western neighbor lands your army on the battlefield's west edge; attacking
+from the north lands you on the north edge; and so on. The defender isn't
+pinned to a fixed opposite edge — see Deployment below — but the
+attacker's entry edge is always a direct read of the actual geography of
+the campaign move that triggered the battle.
 
-- It reads naturally as "pushing into enemy territory," which matches the
-  strategic layer (you're advancing on a province, not sliding sideways
-  past it).
-- UI real estate splits cleanly: player unit info/portraits anchor to the
-  bottom of the screen near the player's own army, enemy info anchors to
-  the top — no need to mirror UI elements left/right.
-- It reinforces that this is a grid tactics game, not a simulated
-  battlefield viewed from the side — the top-down framing is honest about
-  what the system actually is.
+This requires the strategic layer to know, for any two adjacent provinces,
+which direction one lies in relative to the other (see
+`03-strategic-layer.md`), and the tactical layer to orient the hex
+battlefield so that direction maps onto one of the hex grid's six edges.
 
-The hex grid decision doesn't change this framing — a hex grid still has a
-clear south edge and north edge, just with 6-directional adjacency instead
-of 4/8.
+Why this instead of a fixed axis:
+- It makes the tactical battle a direct continuation of the strategic
+  decision that caused it — attacking from the Blight-adjacent province
+  puts Shadowspawn on the northern tree line for real, not just in flavor
+  text.
+- It gives terrain and deployment (below) something real to respond to:
+  defending the same province against an attack from the river crossing
+  in the east is a different battle than defending it against an attack
+  out of the southern hills, using the same battlefield.
+- It leaves room — without needing a redesign later — for more than one
+  attacking force to converge on the same province from different
+  directions in the same turn, each entering from its own edge with the
+  defender caught between them. Full multi-edge battles are a Phase 5+
+  enhancement (see Open items), not an MVP requirement, but the entry-edge
+  model supports it naturally when it's built.
+- Most individual battles will still read as "one side pushing toward the
+  other," the same way the original fixed framing intended — the
+  difference is that which edge is "forward" now depends on the actual
+  campaign, not a fixed screen direction. The presentation layer should
+  orient the camera/UI to match the strategic bearing the player is used
+  to (see the sim-vs-render orientation note in
+  `docs/technical-design/04-battle-simulation-design.md`), so "I'm
+  attacking from the west" feels consistent between the strategic map and
+  the battle.
 
-## Deployment phase
+## Deployment phase: bounded, and asymmetric between attacker and defender
 
-Before the battle starts, the player is given a **deployment zone**
-(typically the southern 2–4 hex rows, terrain-dependent) and places units
-within it freely: front line, flanks refused or extended, ranged units
-held back, a channeler tucked behind infantry, cavalry held on a flank to
-exploit open ground. This is where CoE5's "just commit the stack" gives way
-to real Total-War-style pre-battle planning — but bounded to a grid, so it
-stays fast to resolve and easy to read.
+Deployment freedom is real on both sides, but it isn't symmetric — the
+attacker is just arriving at the province's edge; the defender is fighting
+on ground they already hold.
 
-The enemy AI deploys with the same freedom, using the same terrain, which
-is what makes terrain choices during the strategic layer's battles matter
-(attacking into a forested province against Aiel is a different tactical
-problem than attacking across open plains).
+- **Attacker deployment zone:** a band of hexes adjacent to the attacker's
+  entry edge (the "beachhead"). The attacker chooses how to arrange units
+  within that band — concentrated for a strong initial push, or spread to
+  cover more of the edge — but can't deploy deep into the province before
+  the battle starts.
+- **Defender deployment zone:** the rest of the battlefield, minus a
+  buffer near the attacker's entry edge reserved for their arrival. This
+  is deliberately much more generous than the attacker's — the defender
+  can make a stand forward at a chokepoint, fall back to a fortification,
+  spread thin to cover multiple approach lanes, or hold a reserve deep in
+  the province, all before a single order is given.
+- Both zones are still bounded, not the whole map — this keeps the
+  deployment phase fast to read and keeps the entry-edge model meaningful
+  (an attacker who could deploy anywhere would make "where you attacked
+  from" cosmetic).
+
+The enemy AI deploys under the same rules and the same terrain, which is
+what makes the strategic-layer decision to attack from one direction
+rather than another a real tactical choice, not flavor.
+
+### Terrain-linked deployment trade-offs
+
+This is where deployment stops being just "arrange units" and starts being
+a real strategic choice with matched upside and downside, using the same
+terrain from `The battlefield` above:
+
+| Deployment choice | Upside | Downside |
+|---|---|---|
+| Hold a **hill** in your zone | Defense/ranged bonus | Farther to retreat if routed — routing units are exposed longer |
+| Deploy inside a **forest** | Concealment/ambush bonus (may go unspotted until the enemy is adjacent) | Slower to reposition afterward; weaker formation bonuses |
+| Concentrate at a **chokepoint** (ford, pass, gate) | A small force can hold a much larger one | A single flank collapse — or a channeler weave that clears the chokepoint — is proportionally catastrophic; contests no other ground |
+| **Spread across multiple lanes** | Harder to outflank entirely; better map control | Each concentration is individually weaker; reinforcing between them costs real time on the clock (this is a real-time battle — see `docs/decisions/0002` — so repositioning has a literal time cost) |
+| Deploy behind a **fortification** (province-dependent) | Strong defense bonus | Cedes the open field; the attacker may bypass and pressure elsewhere instead of attacking the fortified point directly |
+| Hold a **reserve** off the front line | Full flexibility to reinforce wherever the fight goes badly | Outnumbered in the opening exchanges |
+
+These trade-offs should live as **terrain and unit tags in data**
+(`docs/technical-design/02-data-driven-content.md`) — e.g., `hill` carries
+`defense_bonus` and `rout_distance_penalty`; a unit with an `ambush` tag
+draws its concealment specifically from `forest` terrain. Deployment
+strategy should be an emergent property of terrain + unit data, not a
+separate hardcoded system, so a new terrain type or unit automatically
+slots into the same trade-off space.
 
 ## Battle phase: order-giving
 
@@ -159,8 +215,8 @@ content concern, not an MVP requirement.
 
 ## Open items
 
-- Exact battlefield size in hexes, and exact deployment zone depth — Q3 in
-  `01-open-questions.md`, still open.
+- Exact battlefield size in hexes, and exact deployment zone depth for
+  both attacker and defender — Q3 in `01-open-questions.md`, still open.
 - Exact formula for combat resolution (to-hit, damage, terrain modifier
   stacking, attack cooldown/rate) — belongs in a balance-focused follow-up
   once the shape above is validated in a Phase 2 prototype.
@@ -171,3 +227,11 @@ content concern, not an MVP requirement.
   Phase 2 prototyping finds otherwise.
 - Siege-specific rules (walls as a battle-wide feature rather than a single
   terrain hex) — Phase 5 content concern.
+- Full multi-edge/multi-front battles (more than one attacking force
+  entering from different edges in the same battle) — Phase 5+
+  enhancement; MVP handles one attacker edge and one defender per battle.
+- What happens when neither side is cleanly "the attacker" (e.g., two
+  armies both moved into a contested/neutral province the same turn) —
+  likely resolved by giving each force its own entry edge based on its own
+  origin province, even when those edges aren't opposite each other,
+  which is a reasonable fallback but hasn't been fully specced.

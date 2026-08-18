@@ -10,10 +10,10 @@ is simultaneously playing its own game for the same stakes. Manage your
 faction on a strategic map, the way you would in Conquest of Elysium: simple,
 iconic, and full of asymmetric factions with almost nothing in common with
 each other. When armies meet, the game drops into a tactical battle on a
-terrain-covered grid, your forces entering from the south and theirs from the
-north, and you fight it out not by picking "attack" and watching, but by
-laying out your formation and then actively directing units as the fight
-unfolds.
+terrain-covered grid, entering from whichever edge matches the direction
+you actually attacked from on the strategic map, and you fight it out not
+by picking "attack" and watching, but by laying out your formation and
+then actively directing units as the fight unfolds.
 
 ## Why these two games, specifically
 
@@ -22,8 +22,8 @@ unfolds.
 | Visual approach | Simple 2D icons/portraits, no unit models | High-fidelity 3D armies | 2D icons/portraits, CoE-simple |
 | Strategic layer | Many wildly asymmetric AI factions, all acting with agency | Faction management, but each faction plays similarly | Many asymmetric factions (WoT powers), CoE-style |
 | Battle resolution | Two lines meet and grind — minimal tactical input | Full battlefield freedom: flanking, terrain, formations | Grid-based freedom: terrain, positioning, flanking — but still a grid |
-| Battle input model | Mostly automatic once armies meet | Real-time (or turn-based in some titles) direct unit control | Deploy, then actively issue orders as the fight plays out |
-| Orientation | Left-to-right line clash | Free 3D orientation | Bottom-to-top: your line advances north into theirs |
+| Battle input model | Mostly automatic once armies meet | Real-time (or turn-based in some titles) direct unit control | Deploy, then actively issue orders as the fight plays out, real-time with unlimited pause |
+| Orientation | Left-to-right line clash | Free 3D orientation | Entry edge set by the actual direction of the strategic-map attack; deployment freedom (asymmetric between attacker and defender) on a grid |
 | Scope philosophy | Breadth over fidelity — many factions, low art cost per unit | Fidelity over breadth — fewer factions, high art cost per unit | Breadth over fidelity, matching CoE — this is what makes a large WoT faction roster affordable |
 
 The reason to take CoE5's simplicity isn't just budget — it's that the
@@ -61,11 +61,13 @@ in the fiction).
 
 ### 3. A grid battlefield with room to maneuver
 Terrain that matters (hills, forests, river crossings, fortifications),
-armies that enter from opposite ends of a vertical field, a deployment
-phase where the player chooses formation and positioning, and a battle phase
-where the player can pause and give orders to individual units or groups as
-the fight develops — not just "commit and watch." This is Total War's
-contribution to the hybrid, expressed on a grid instead of open 3D terrain.
+armies that enter the field from whichever edge matches their actual
+direction of attack on the strategic map, a deployment phase with real —
+if bounded and asymmetric — freedom for both attacker and defender to
+exploit that terrain, and a battle phase where the player can pause and
+give orders to individual units or groups as the fight develops — not just
+"commit and watch." This is Total War's contribution to the hybrid,
+expressed on a grid instead of open 3D terrain.
 
 ### 4. The One Power is the core power-fantasy *and* the core risk
 Channeling should be the single most powerful tool in the game at both

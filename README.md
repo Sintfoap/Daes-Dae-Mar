@@ -17,9 +17,11 @@ Wheel of Time*. It crosses two design lineages:
 The hybrid: a **CoE5-style strategic layer** (simple iconography, many
 asymmetric AI factions, resource and territory management) feeding into a
 **grid-based tactical battle layer** with terrain to fight around, armies
-deployed bottom-to-top instead of the traditional left-to-right clash, and
-live order-giving so the player can micro a battle as it happens instead of
-just watching two blobs collide.
+entering the field from whichever edge matches the direction they actually
+attacked from on the strategic map, real (if bounded and asymmetric)
+freedom in how both sides deploy into that terrain, and live order-giving
+so the player can micro a battle as it happens instead of just watching
+two blobs collide.
 
 The Wheel of Time setting supplies the factions, the power scaling (the One
 Power, and everything that comes with wielding it), the units, and the

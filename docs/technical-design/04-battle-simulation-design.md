@@ -3,9 +3,12 @@
 > Status: Draft — technical counterpart to
 > `docs/game-design/04-tactical-battle-layer.md`. Reflects the locked
 > decisions in `docs/decisions/0002-real-time-with-pause-battle-pacing.md`
-> (real-time with pause) and `docs/decisions/0003-hex-grid.md` (hex grid).
-> This is the doc Phase 2's tactical prototype should be validating most
-> directly — it's the riskiest technical piece in the project.
+> (real-time with pause), `docs/decisions/0003-hex-grid.md` (hex grid), and
+> `docs/decisions/0006-strategic-driven-entry-and-deployment.md`
+> (entry edge set by the strategic attack direction, asymmetric deployment
+> zones). This is the doc Phase 2's tactical prototype should be
+> validating most directly — it's the riskiest technical piece in the
+> project.
 
 ## Grid representation
 
@@ -25,6 +28,52 @@ Adjacency is 6-directional. Pathfinding is hex-grid A* (a well-documented
 problem — the classic reference is Amit Patel's Red Blob Games hex-grid
 guide) rather than anything novel; budget real implementation time for it
 in Phase 2, but not design-risk time.
+
+## Orientation: canonical simulation space vs. rendered space
+
+Per `docs/decisions/0006-strategic-driven-entry-and-deployment.md`, the
+edge an attacker enters from varies battle to battle based on the
+strategic map. Recommend keeping the **simulation itself orientation-
+agnostic**: internally, combat/movement/order logic always treats "the
+attacker's entry edge" as a canonical direction (equivalent to one fixed
+axial direction, e.g. what the code calls "north" regardless of what the
+strategic map calls it), so resolution logic, pathfinding, and flanking
+math never need to special-case which real-world direction a battle is
+facing.
+
+The **presentation layer** is what maps canonical simulation space onto
+the direction the player actually attacked from — rotating the rendered
+hex grid (and camera, and UI anchoring) so that, e.g., an attack launched
+from a province to the west visually enters from the west of the screen.
+This keeps a whole class of orientation bugs out of simulation code
+entirely and localizes the "which way is this battle actually facing"
+concern to a single, thin rotation/mapping step at render time. The
+strategic-layer province-direction data
+(`docs/game-design/03-strategic-layer.md`) is the input to that mapping,
+computed once when a battle is set up.
+
+## Deployment zone geometry
+
+Per `docs/decisions/0006-strategic-driven-entry-and-deployment.md`, the
+two sides' deployment zones are asymmetric and both are subsets of the hex
+grid, computed from the canonical entry edge above:
+
+- **Attacker zone:** hexes within a fixed ring-distance of the entry edge
+  (a "beachhead" band). Simple to compute as a hex-distance-from-edge
+  query once the entry edge is known.
+- **Defender zone:** all hexes *not* in the attacker zone and not in a
+  small neutral buffer immediately in front of it — i.e., most of the
+  board. This should be expressed as a straightforward exclusion, not a
+  separately-authored shape, so it stays correct automatically regardless
+  of which edge the attacker is entering from or how the map's terrain is
+  laid out.
+
+Exact ring-distance/buffer sizes are a Phase 2 tuning question (tracked in
+`docs/game-design/04-tactical-battle-layer.md`'s open items), but the
+computation should be a pure function of `(entry edge, board shape) →
+(attacker zone, defender zone)` for the same reason the orientation
+mapping above is kept out of simulation logic — it needs to work
+correctly for any entry edge without bespoke cases.
 
 ## Simulation clock
 
@@ -130,6 +179,10 @@ underneath, while the player only ever sees smooth motion.
   `docs/game-design/04-tactical-battle-layer.md`) actually legible and
   interruptible in practice, or does it need a more explicit UI treatment
   than "a bar over the unit's head"?
+- Does the canonical-simulation/rotated-rendering split above actually
+  hold up cleanly, or does some piece of gameplay logic (line-of-sight,
+  UI anchoring, camera behavior) turn out to need real-world orientation
+  awareness after all?
 
 ## Open items
 

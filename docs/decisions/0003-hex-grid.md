@@ -34,5 +34,7 @@ The tactical battlefield uses a hex grid.
   neighbors instead of 4/8) — a known, well-documented problem space, not a
   novel one, but real implementation work that a square grid would have
   avoided.
-- The bottom-to-top orientation pillar is unaffected — a hex grid still
-  supports a clear "south edge / north edge" deployment framing.
+- Battlefield orientation was later decoupled from a fixed axis entirely
+  (see `0006-strategic-driven-entry-and-deployment.md`) — a hex grid
+  supports an entry edge on any of its six sides equally well, so that
+  change didn't require revisiting this one.

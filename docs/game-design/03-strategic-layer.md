@@ -22,6 +22,18 @@ scenery that reacts to them.
   (resource yield) and the tactical layer (a battle fought in a forest
   province starts with forest terrain on the battle grid — see
   `04-tactical-battle-layer.md`).
+- Every province-to-province border has a **direction** (which of the hex
+  grid's six directions the neighbor lies in — see
+  `docs/decisions/0006-strategic-driven-entry-and-deployment.md`), not
+  just an adjacency flag. This is what lets the tactical layer put an
+  attacking army on the battlefield edge that actually matches where it
+  came from. In practice this means province adjacency should be modeled
+  as a hex-adjacency graph (most naturally, provinces *are* hex tiles at
+  the strategic scale — a larger hex than a battle-grid hex, but the same
+  six-direction geometry), so every border is unambiguously one of six
+  directions rather than a freeform arrangement that would need
+  case-by-case mapping onto the battle grid. See Q9 in
+  `01-open-questions.md` for the still-open exact geometry decision.
 - Scope is a **bounded region** at MVP, not the whole continent (see Q6).
 
 ## Turn structure
@@ -43,7 +55,12 @@ faction-specific toolkit:
    flavor text.
 
 When two hostile armies end a turn in the same province, a **tactical
-battle** triggers — see `04-tactical-battle-layer.md`.
+battle** triggers — see `04-tactical-battle-layer.md`. If more than one
+allied army attacks the same province from different neighboring
+provinces in the same turn, each attacking force's entry edge is still
+determined by its own origin province — a natural setup for a
+pincer/converging attack once multi-edge battles are supported (Phase 5+;
+MVP handles one attacker and one defender per battle).
 
 ## Faction agency (the CoE5 signature feature)
 

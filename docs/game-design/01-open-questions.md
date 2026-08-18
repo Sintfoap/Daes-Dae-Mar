@@ -48,6 +48,34 @@ map layout work.
 
 ---
 
+### Q9. Strategic map province adjacency geometry
+Follows from `docs/decisions/0006-strategic-driven-entry-and-deployment.md`:
+the tactical battle layer needs every province border to carry one of six
+hex directions, so an attack from a given neighbor maps cleanly onto a
+battlefield entry edge. How should the strategic map itself be modeled to
+guarantee that?
+
+- **A — Provinces as hex tiles.** The strategic map is itself a (coarser)
+  hex grid; every province has up to six neighbors, each in an
+  unambiguous direction. Cleanest mapping onto the battle grid, but
+  constrains province shape/size to a regular hex layout, which may not
+  fit the real geography of Randland regions well everywhere.
+- **B — Freeform province shapes with a tagged direction per border.**
+  Provinces can be any shape (matching real geography more naturally —
+  e.g., a long river valley, an irregular mountain range), but each
+  border between two provinces is manually or algorithmically tagged with
+  the nearest of the six hex directions. More authoring/tooling work, more
+  flexible result.
+
+**Recommendation:** B, with a rule that flags any province with more than
+six neighbors (or with two neighbors that would map to the same direction)
+as needing manual resolution — this preserves natural-feeling regional
+geography (a real strategic-map concern) while still guaranteeing the
+tactical layer always has an unambiguous direction to work with. Worth
+revisiting once actual map layout work starts (tied to Q6).
+
+---
+
 ### Q8. IP/licensing posture
 Wheel of Time is Robert Jordan's (and now Tor/Amazon's) IP. Options range
 from "build entirely for personal/private use, never distribute," to
@@ -97,3 +125,12 @@ and `docs/decisions/0004-mvp-faction-shortlist.md`.
 with no engine-specific import step; distribution is a browser link.
 See the updated `docs/technical-design/01-tech-stack-options.md` and
 `docs/decisions/0005-tech-stack-typescript-pixijs.md`.
+
+### Battle orientation model (not originally numbered as a Q)
+**Decision: entry edge is set by the strategic attack direction, not a
+fixed axis; deployment is asymmetric between attacker and defender, with
+explicit terrain-linked trade-offs.** Supersedes the original fixed
+"south/north" framing from the first pass of `04-tactical-battle-layer.md`.
+See `docs/decisions/0006-strategic-driven-entry-and-deployment.md`. This
+decision is what introduced Q9 above (province adjacency geometry) as a
+new open question.
