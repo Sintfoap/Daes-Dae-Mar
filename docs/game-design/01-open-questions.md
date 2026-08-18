@@ -126,6 +126,16 @@ with no engine-specific import step; distribution is a browser link.
 See the updated `docs/technical-design/01-tech-stack-options.md` and
 `docs/decisions/0005-tech-stack-typescript-pixijs.md`.
 
+### Headcount-based magic rituals (not originally numbered as a Q)
+**Decision: individual-scale units (Channelers, Heroes/Commanders) are
+never abstracted into squad tokens; Shielding is a single-caster contested
+action; Stilling/Gentling and Turning are fixed-headcount Circle Rituals
+(13 same-affinity channelers, or 13 Black Ajah + 13 Myrddraal for
+Shadow-exclusive Turning), attemptable both mid-battle and at a stronghold
+against a held Prisoner.** Also introduces the Darkfriend Network as a
+Shadow-exclusive strategic resource. See
+`docs/decisions/0007-headcount-rituals.md`.
+
 ### Battle orientation model (not originally numbered as a Q)
 **Decision: entry edge is set by the strategic attack direction, not a
 fixed axis; deployment is asymmetric between attacker and defender, with

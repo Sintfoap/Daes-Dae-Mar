@@ -44,8 +44,22 @@ Every unit's stat block should cover, at minimum:
 
 Per Q3 in `01-open-questions.md`: one grid token represents an abstracted
 squad/company of soldiers (CoE5-style single-icon-per-unit), not an
-individual combatant. Strength/HP represents the unit's remaining fighting
-power as a whole, not hit points on one body.
+individual combatant, for most archetypes. Strength/HP represents the
+unit's remaining fighting power as a whole, not hit points on one body.
+
+**Exception — individual-scale units.** Channeler and Hero/Commander
+archetype tokens are never abstracted squads: **one token is exactly one
+specific, named person**, always. This is a deliberate carve-out from the
+squad abstraction above, and it's load-bearing, not cosmetic: several of
+the setting's signature magic mechanics — Shielding, Circles, and the
+Stilling/Gentling and Turning rituals (`06-magic-and-channeling.md`) —
+depend on the game being able to count exact numbers of exact individuals
+present and linked. "A circle of thirteen Aes Sedai" only means something
+if the simulation can verify thirteen distinct Channeler tokens of the
+right type are on the field and linked together — it can't be represented
+by thirteen soldiers inside one abstracted squad icon. Line
+infantry/cavalry/beasts stay abstracted; channelers and named heroes never
+are.
 
 ## Example unit cards (illustrative, not final)
 

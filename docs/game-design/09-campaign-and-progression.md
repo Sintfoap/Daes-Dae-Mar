@@ -37,12 +37,38 @@ validates the base sandbox loop.
 ## Heroes and persistence
 
 - Commanders/heroes (per `07-units.md`) persist across the campaign and
-  can be permanently lost (death, capture, stilling/gentling for
-  channelers) — this is what gives channeling's risk real teeth at the
-  campaign level, not just within one battle.
+  can be permanently lost (death, capture, stilling/gentling, or Turning
+  for channelers — see `06-magic-and-channeling.md`) — this is what gives
+  channeling's risk real teeth at the campaign level, not just within one
+  battle.
 - Recommend heroes gain experience/veterancy over a campaign (a light
   leveling system) so a surviving hero is worth protecting beyond their
   base stats — exact leveling depth is a Phase 5 content question.
+
+### Prisoners
+
+A captured channeler (`06-magic-and-channeling.md`'s Capture battle
+outcome) becomes a **Prisoner**: held at whichever province/stronghold
+captured them, alive but out of play for their original owner, rather than
+simply removed from the game. This is deliberately persistent
+campaign-layer state, not a one-battle abstraction:
+
+- A Prisoner is the precondition for a Stilling/Gentling or Turning
+  ritual — holding one is what makes assembling the required 13- or
+  13+13-channeler roster worth doing.
+- A Prisoner can be **rescued** — the original owner can mount a raid on
+  the holding province specifically to free them before a ritual
+  completes, which is a natural source of urgent, high-stakes side
+  objectives distinct from ordinary territorial battles.
+- A Prisoner could also be **ransomed** (traded back for
+  Gold/Influence/prisoner exchange) as a lower-stakes alternative to
+  running a ritual — flagged as a reasonable option, not yet a locked
+  mechanic.
+- Losing a hero to Stilling/Gentling/Turning (rather than death) is a
+  distinct, worse outcome than death for campaign purposes: the character
+  persists (as a permanently diminished figure, or — Turning only — as an
+  enemy-controlled unit) rather than simply being removed, which is more
+  narratively and mechanically painful than a clean loss.
 
 ## The Horn of Valere (illustrative campaign-level relic/event)
 

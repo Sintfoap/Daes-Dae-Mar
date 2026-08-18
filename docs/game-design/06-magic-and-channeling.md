@@ -59,7 +59,8 @@ a one-time strategic-layer stat.
 |---|---|---|
 | Offense | Fire/lightning-equivalent direct-damage weaves, up to balefire at the extreme end | Balefire should be rare, expensive, and carry unique risk (unmaking effects) — a last-resort weapon, not a spammable nuke |
 | Control | Compulsion-family effects | Reserved for Shadow/Darkfriend use — using Compulsion should be treated as a moral and strategic red line even in-fiction, consistent with the books |
-| Utility | Healing, Traveling/gateways, shielding | Gateways are the strategic-layer's fast-travel mechanic when available to a faction; healing matters most in prolonged campaigns |
+| Utility | Healing, Traveling/gateways | Gateways are the strategic-layer's fast-travel mechanic when available to a faction; healing matters most in prolonged campaigns |
+| Shielding / Circles / Rituals | Shield, Link, Stilling/Gentling, Turning | Their own subsystem, not a generic weave list entry — see "Shielding, Circles, and Rituals" below |
 | Detection | Sensing channeling, Foretelling-adjacent effects | Primarily strategic-layer value (see `03-strategic-layer.md`); tactically useful for revealing hidden/ambushing units |
 
 A channeler's available weave list should be a function of **faction +
@@ -77,6 +78,118 @@ the same options even where their raw categories overlap.
   effectively a small, bespoke rule, which is intentional — it's where
   flavorful one-off mechanics belong instead of bloating the general
   weave list.
+
+## Shielding, Circles, and Rituals
+
+**Decision (`docs/decisions/0007-headcount-rituals.md`):** single powerful
+channelers can Shield another — temporarily, reversibly — but the deeper,
+permanent interventions (Stilling/Gentling, and Turning someone to the
+Shadow) take a precise number of channelers acting together. This project
+runs with that distinction as a real mechanic, not flavor text, branching
+from canon specifics where it serves the game better (noted inline below)
+rather than trying to reproduce the books exactly.
+
+This is also the concrete reason individual-scale units (Channelers,
+Heroes/Commanders) are never abstracted into squad tokens
+(`07-units.md`'s Representation and scale) — these mechanics only mean
+something if the game can count exact people.
+
+### Shielding — single-caster, reversible
+- Any channeler above a strength/skill threshold can attempt to Shield
+  another channeler: a weave that cuts the target off from the Power
+  without harming them.
+- Resolved as a **contested check** between caster and target strength —
+  not guaranteed. The stronger the caster relative to the target, the more
+  likely (and more durable) the shield.
+- Reversible: the target's own side can Release a shield with another
+  channeler, or it can lapse naturally over time.
+- Tactically, this is the fast, cheap answer to an enemy channeler
+  mid-battle — neutralize their weaves without needing to kill them — at
+  the cost of the caster's own Power reserve and a moment of the caster's
+  own vulnerability while shielding.
+- Shielding a target is normally the **prerequisite** for the Rituals
+  below — you generally can't run a Stilling/Gentling or Turning circle on
+  someone still free to channel back at you.
+
+### Circles — linking multiple channelers
+- Multiple channeler units can **Link** into a Circle: one acts as leader,
+  the rest contribute their Power reserve to the leader's pool for the
+  duration of the link.
+- A linked circle can cast weaves beyond any single member's individual
+  capacity, and is the structure that makes the fixed-headcount Rituals
+  below possible at all.
+- **House rule (branching from canon):** circles are single-affinity
+  (saidar-only or saidin-only) by default, matching the setting's baseline
+  limit. A mixed-affinity circle is treated as an extremely rare,
+  campaign-unlockable event (a relic or a story beat, echoing Rand and
+  Nynaeve's breakthrough) rather than a standard tactical option — see
+  Open items.
+- Linking takes time (a cast-step, interruptible like any weave) and holds
+  every linked unit stationary and vulnerable for its duration — a circle
+  is powerful but a highly visible, highly targetable commitment, which is
+  what keeps it from being a free upgrade.
+
+### Rituals — fixed headcount, permanent effect
+Rituals are the highest-stakes actions in the game: slow to assemble,
+unmissable while in progress, and permanent when they succeed. Two are
+defined at MVP.
+
+**Stilling / Gentling** — permanently severing a channeler from the Power.
+- **Default path:** a Circle of **13 same-affinity channelers** (13 Aes
+  Sedai, or 13 Black Tower channelers) linked around a restrained target.
+- **Alternate path (house rule):** a much smaller link — as few as one
+  channeler — wielding a sufficiently powerful sa'angreal can attempt it
+  alone, at significantly higher backlash risk on failure. Meant to be
+  rare and dramatic (a Choedan-Kal-scale moment), not a routine shortcut
+  around recruiting thirteen channelers.
+- The target must already be unable to resist: **Shielded** and
+  captured/restrained, not freely channeling.
+- Requires an extended, uninterruptible cast window. Breaking the circle
+  (any participant killed, routed, or forcibly separated, or the target
+  freed) fails the ritual — every participant spent that window fully
+  committed and exposed for nothing.
+
+**Turning to the Shadow** — permanently converting a captured channeler to
+serve the Shadow.
+- **Shadow-exclusive.** Requires **13 Black Ajah + 13 Myrddraal**, linked
+  around a restrained, Shielded target — a house-rule extension of the
+  Stilling/Gentling circle, doubled and mixed to reflect that this
+  corrupts the person rather than just severing their ability.
+- Same restrained-target and uninterrupted-window requirements as
+  Stilling/Gentling, but the stakes are higher: failure isn't just a
+  wasted attempt, it's a strategic catastrophe — 26 individual-scale
+  Shadow units stationary and exposed in one place, all at once.
+- A successfully turned channeler becomes a **controllable unit for the
+  Shadow player.** This is the mechanical payoff behind unit conversion
+  being Shadow-exclusive: alliances and turned allies, not gold or land,
+  are the Shadow's core resource — see the Darkfriend Network in
+  `08-economy-and-resources.md` and the updated Shadow brief in
+  `05-factions.md`.
+
+### Where Rituals happen: battle or stronghold
+Per the earlier decision to support both:
+- **Mid-battle (the risky gambit):** a full ritual circle can be assembled
+  and attempted during a tactical battle, if the caster's side can hold
+  position around a Shielded, captured target uninterrupted for the whole
+  cast window. High risk (13 or 26 individual-scale units stationary and
+  committed is an enormous target for the enemy to attack or interrupt),
+  high reward (an instant, permanent result without waiting on the
+  strategic layer).
+- **Strategic layer (the safe path):** a captured channeler can instead be
+  held as a **Prisoner** at a stronghold/province (a persistent unit
+  status, not death — see `09-campaign-and-progression.md`), and the
+  ritual run as a multi-turn strategic action once the required roster
+  (13, or 13+13) is assembled there. Slower and safer — no battlefield
+  interruption risk — but a held prisoner can potentially be rescued by
+  the opposing side in the meantime, which is its own source of campaign
+  drama.
+
+### Capture as a battle outcome
+Both paths above depend on **Capture** existing as a distinct battle
+outcome from Kill: an order to subdue rather than destroy a Shielded or
+broken (routing) enemy channeler, turning them into a Prisoner instead of
+a casualty. See `04-tactical-battle-layer.md` for how this is expressed as
+a battle order.
 
 ## Detecting and countering channelers
 
@@ -101,7 +214,17 @@ combat model:
   identity.
 - Full weave list per faction/tier — belongs alongside each faction's unit
   roster work in `07-units.md`.
-- Whether stilling/gentling is purely a narrative/event-driven outcome or
-  a battlefield-achievable one (e.g., a rare ability that can gentle/still
-  an enemy channeler mid-campaign) — flagged for a design discussion, not
-  yet recommended either way.
+- Exact strength/skill threshold and contest formula for solo Shielding —
+  Phase 6 balance pass, tracked alongside combat formulas in
+  `04-tactical-battle-layer.md`.
+- Exact Ritual cast-window length (mid-battle) and turn-count (strategic
+  layer) — Phase 2/6 tuning.
+- Whether and how mixed-affinity circles ever unlock (a relic, a campaign
+  event, a tech-tree-style discovery) — flagged as a real design question,
+  not yet recommended either way; fine to leave unbuilt for MVP since the
+  single-affinity default fully supports both defined Rituals.
+- Whether factions other than the Shadow ever get *any* form of forced
+  conversion (even a weaker/costlier one) — current design keeps
+  conversion Shadow-exclusive by decision; revisit only if playtesting
+  shows other factions need an answer to it beyond Shielding/killing/
+  ransoming captured channelers.

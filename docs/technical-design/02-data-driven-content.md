@@ -25,6 +25,7 @@ faction #6 should look like adding files, not writing code.
 | **Faction** | Identity, strategic-layer recruitment rules, resource priorities, playable unit list, faction-specific flags (e.g., "no channelers," "no cavalry") |
 | **Unit** | Archetype, stat block, special tags, weave list (if a channeler), portrait/icon reference |
 | **Weave** | Category, cost, effect, cast-step behavior, which factions/tiers can use it |
+| **Ritual** | Required participant composition (exact counts by unit type/faction), target prerequisites (Shielded, restrained), cast-window length, effect on success/failure — see `docs/game-design/06-magic-and-channeling.md` |
 | **Terrain type** | Movement cost, combat modifiers, line-of-sight rules |
 | **Item (relic)** | Effect, acquisition rules, which unit types can equip it |
 | **Event** | Trigger conditions, effects, narrative text |
@@ -72,6 +73,33 @@ This is deliberately close to the stat template in
 `docs/game-design/07-units.md` — the data schema should never drift far
 from the design doc's own vocabulary, or the two will silently disagree
 over time.
+
+**Ritual example** — note that `requires` is a list of exact-count
+participant requirements, not a strength threshold; the simulation must be
+able to literally count linked individual-scale units of the right type,
+which is why Channeler/Hero units are never abstracted into squad tokens
+(`docs/game-design/07-units.md`'s Representation and scale):
+
+```json
+{
+  "id": "turning_to_the_shadow",
+  "display_name": "Turning to the Shadow",
+  "faction_restriction": "shadow",
+  "requires": [
+    { "unit_type": "black_ajah", "count": 13 },
+    { "unit_type": "myrddraal", "count": 13 }
+  ],
+  "target_prerequisites": ["shielded", "restrained"],
+  "cast_window_seconds": 240,
+  "on_success": { "effect": "convert_unit_to_faction", "faction": "shadow" },
+  "on_interrupted": { "effect": "fail_no_partial_credit" }
+}
+```
+
+A validator should reject this file if `black_ajah` or `myrddraal` aren't
+resolvable unit-type IDs, the same way it would for any other
+cross-reference — Rituals aren't a special case for validation purposes,
+just a content type with a less common field shape.
 
 ## Content validation as a first-class workflow step
 

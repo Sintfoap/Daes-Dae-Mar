@@ -21,13 +21,25 @@ strategic layer turns into spreadsheet management.
 | **Influence** | Political capital, renown | Faction-specific: White Tower recruitment/politics, diplomacy, hero recruitment |
 | **Taint / Corruption** | Accumulated cost of channeling saidin or Shadow corruption | Not spent — a rising liability tracked per-channeler and, for the Shadow, potentially per-province (Blight spread) |
 | **Relics** (angreal/sa'angreal/ter'angreal) | Rare magical items | Equipment-slot resource for channelers; acquired, not manufactured, in most cases |
+| **Darkfriend Network (Agents)** — Shadow-exclusive | Sleeper agents planted inside enemy provinces/factions | Cashed in for intelligence/resources, or spent to trigger an enemy unit or province defection event; the acquisition path for Black Ajah specifically (see below) |
 
-Four spendable resources plus one liability-resource is intentionally
-close to CoE5's own scope. Resist adding a sixth spendable resource
-without a clear faction-identity reason — see the strategic-layer note in
-`03-strategic-layer.md` about every faction needing genuinely different
-priorities among the *same* resource set, rather than each faction getting
-its own bespoke currency.
+Four spendable resources plus one liability-resource, common to every
+faction, is intentionally close to CoE5's own scope. Resist adding a
+universal sixth spendable resource without a clear faction-identity
+reason — see the strategic-layer note in `03-strategic-layer.md` about
+every faction needing genuinely different priorities among the *same*
+resource set, rather than each faction getting its own bespoke currency.
+
+The Darkfriend Network is the deliberate exception, and it's
+faction-exclusive rather than universal for exactly that reason: the
+Shadow's whole strategic identity (`05-factions.md`) is that its provinces
+and units come from turned people rather than gold or conquest — "the
+Shadow's main resource is alliances," not a sixth generic currency every
+faction shares. See `06-magic-and-channeling.md`'s Turning ritual for the
+mechanic this resource ultimately feeds: a well-developed network inside
+an enemy faction (the White Tower, most notably) is how the Shadow
+acquires the Black Ajah units a Turning circle requires in the first
+place.
 
 ## Why Taint/Corruption is a resource and not just a stat
 
@@ -50,10 +62,24 @@ Per the strategic-layer design goal that no two factions play the same:
   — a unique acquisition path, not just a discount.
 - **Shadow:** Corruption doubles as an offensive strategic tool (spreading
   Blight/subversion into enemy provinces), not just a per-channeler
-  liability.
+  liability; and unlike every other faction, its primary path to *both*
+  new provinces and new channeler units runs through the Darkfriend
+  Network above rather than through Gold/recruitment — a deliberate
+  inversion of how the rest of the roster plays the economy.
 - **Aiel:** Low Gold/Food dependency relative to settled nations (raiding
   and clan support rather than province economies), high dependency on
   Influence-equivalent (honor/clan standing) instead.
+
+## Prisoners are a status, not a resource
+
+Captured channelers (`06-magic-and-channeling.md`'s Capture battle
+outcome) are tracked as a **unit status** — held at a stronghold/province —
+rather than as a spendable resource. They matter economically only as the
+precondition for the Stilling/Gentling and Turning rituals: holding one is
+what makes the required 13- or 13+13-channeler roster worth assembling.
+Guarding and potentially rescuing prisoners is real strategic-layer
+content (see `09-campaign-and-progression.md`), not an economy mechanic in
+its own right.
 
 ## Open items
 

@@ -61,18 +61,32 @@ answer to all four of these, or it isn't ready to design units for yet:
 - **Risk/cost:** Low raw numbers; strong specifically *because of* terrain,
   weak specifically *without* it — makes battlefield selection strategic.
 
-### Shadow (Trollocs, Myrddraal, Dreadlords)
+### Shadow (Trollocs, Myrddraal, Dreadlords, Black Ajah)
 - **Power source:** Numbers (Trollocs), fear (Myrddraal/Fades), corrupted
-  saidin channeling (Dreadlords).
-- **Strategic hook:** Can win provinces through corruption/infiltration
-  without a battle (Darkfriend subversion), in addition to open war from
-  Blight territory.
+  saidin channeling (Dreadlords) — and, distinctively, **alliances**: the
+  Shadow's core resource is people turned, bought, or blackmailed into
+  serving it, not gold or land (see `08-economy-and-resources.md`).
+- **Strategic hook:** Builds a **Darkfriend Network** — agents planted
+  inside enemy provinces/factions — that can be cashed in for
+  intelligence/resources or called on to trigger enemy unit/province
+  defections, in addition to (and often instead of) open war from Blight
+  territory. A well-developed network inside the White Tower is also the
+  Shadow's pipeline to **Black Ajah**: sleeper Aes Sedai agents who can be
+  activated into fieldable Shadow channeler units.
 - **Tactical hook:** Horde-and-attrition play backed by fear effects that
-  directly attack enemy morale, plus Dreadlord channeling that's more
-  reckless/higher-variance than "legitimate" channeler factions.
+  directly attack enemy morale, Dreadlord channeling that's more
+  reckless/higher-variance than "legitimate" channeler factions, and the
+  Shadow's signature battlefield gambit: with **13 Black Ajah + 13
+  Myrddraal** linked around a captured, Shielded enemy channeler, the
+  Shadow can permanently convert them to its side mid-battle — the
+  Turning ritual (`06-magic-and-channeling.md`), unique to this faction.
 - **Risk/cost:** Trolloc discipline is poor (harder to hold formation,
   more prone to breaking); Dreadlords take on taint/corruption risk faster
-  than other saidin users due to how they train.
+  than other saidin users due to how they train; the Darkfriend Network
+  and Turning ritual are both slow, patient investments that can be lost
+  in a single bad exchange — planted agents can be discovered and purged,
+  and a Turning circle caught mid-ritual is 26 individual-scale units
+  exposed and lost at once.
 
 ## Additional factions (post-MVP, Phase 5)
 

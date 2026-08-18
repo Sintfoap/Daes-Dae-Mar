@@ -193,13 +193,46 @@ Channelers are the highest-impact, highest-risk units on the field:
   becomes a real tactical thread, now expressed as a race against a visible
   timer rather than a round-based interrupt.
 
+### Capture, Shielding, and Rituals
+
+Three battle mechanics exist specifically to support the headcount-based
+magic rituals in `06-magic-and-channeling.md` — Shielding, Circles, and
+the Stilling/Gentling and Turning rituals:
+
+- **Shield** is an order a channeler can issue against an enemy channeler
+  target — a contested weave that, if it lands, neutralizes the target's
+  ability to channel for the rest of the battle (reversible by their own
+  side). It's the fast, cheap tactical answer to an enemy channeler, and
+  it's also the prerequisite for the next two.
+- **Capture** is an order distinct from **Attack**: it can only be issued
+  against an enemy channeler that is currently Shielded or already
+  routing/broken, and subdues them into a **Prisoner** instead of killing
+  them. A Prisoner is removed from the enemy's control but stays on the
+  strategic layer afterward (see `06-magic-and-channeling.md` and
+  `docs/game-design/09-campaign-and-progression.md`), rather than simply
+  being a casualty.
+- **Ritual** is an order given to a group of individual-scale channeler
+  units (see `07-units.md`'s Representation and scale) to Link into a
+  Circle and attempt Stilling/Gentling or Turning on a captured, Shielded
+  target. It requires the exact participant composition the ritual calls
+  for (13 same-affinity channelers; 13 Black Ajah + 13 Myrddraal for
+  Turning, Shadow-only), holds every participant stationary for an
+  extended, uninterruptible cast window, and fails outright if any
+  participant is killed, routed, or forced out of position, or if the
+  target is freed, before it completes. This is by design the single
+  highest-commitment, highest-risk action available in a battle — assembling
+  it mid-fight should read as an obvious, telegraphed event the opponent
+  can see coming and has a real chance to punish.
+
 ## Victory conditions (per battle)
 
 Default: a side wins when the enemy force is destroyed, has entirely
 routed off the field, or fully retreats. Some battles (sieges, rearguard
 actions) may use objective-based conditions (hold a hex for a duration,
 break through to the enemy's board edge) — flagged here as a Phase 5
-content concern, not an MVP requirement.
+content concern, not an MVP requirement. Units removed via Capture (see
+above) resolve as Prisoners on the strategic layer rather than as ordinary
+casualties, regardless of which side otherwise wins the battle.
 
 ## What this deliberately does not do
 
