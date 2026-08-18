@@ -3,9 +3,9 @@
 This is the working list of decisions that need a real answer before the
 rest of the design docs can stop being "draft." Each entry has the
 question, the options as I see them, a recommendation where I have one, and
-a status. As each gets resolved, move it to the bottom under **Resolved**
-with the final answer and a one-line rationale, and update the doc(s) it
-affects.
+a status. As each gets resolved, it moves to **Resolved** below with the
+final answer, a one-line rationale, and a link to its ADR (see
+`docs/decisions/`).
 
 Treat this file as the front door to Phase 1: this is what "guiding you
 through the process" concretely means — working down this list together.
@@ -13,83 +13,6 @@ through the process" concretely means — working down this list together.
 ---
 
 ## Open
-
-### Q1. Battle pacing model
-How does the player actually give orders during a tactical battle?
-
-- **A — Real-time with pause** (classic Total War). Battle runs
-  continuously; player can pause at any time to survey and queue orders,
-  then unpause. Tense, immediate, rewards fast reads.
-- **B — Turn-based, simultaneous resolution.** Each side plans a round of
-  orders, then both execute at once (like old-school tactics games, or
-  CoE5's own turn structure extended into battle). Calmer, more deliberate,
-  easier to reason about exactly what will happen.
-- **C — Turn-based, alternating.** Player acts, then enemy acts, like a
-  standard tactics/roguelike. Simplest to build and to read, but can feel
-  static compared to a "battle."
-
-**Recommendation: B.** It keeps the "thinking person's battle" pillar
-intact (no reflex pressure), fits a grid better than real-time does (grid
-combat resolved in real time tends to look janky — units sliding
-tile-to-tile on a clock), and is the more natural extension of CoE5's own
-turn-based DNA than bolting on Total War's real-time engine would be. It
-also composes better with channeling: weaves that need a beat of "cast time
-that can be interrupted" are much easier to make legible turn-by-turn than
-in real time.
-
-**This is probably the single highest-leverage decision in the whole
-project** — it determines the shape of `04-tactical-battle-layer.md` and a
-large fraction of the technical architecture. Worth deciding first.
-
----
-
-### Q2. Grid geometry
-- **A — Square grid.** Simple, matches the "bottom-to-top lanes" framing
-  well, easiest to reason about and to build tooling for.
-- **B — Hex grid.** Better movement/flanking feel (no diagonal-distance
-  weirdness), standard for tactics games, slightly more complex UI and
-  pathfinding.
-
-**Recommendation: A (square).** The pitch emphasizes CoE5-style visual
-simplicity; square grids read more like CoE5's own presentation and are
-easier to pair with rectangular terrain features (river crossings, wall
-segments, forest blocks) that come straight out of a map. Hex grids shine
-most when 6-directional movement itself is a tactical feature, which isn't
-core to this pitch.
-
----
-
-### Q3. Battlefield scale and unit representation
-How many "things" does the player actually control in one battle?
-
-- Roughly how large is a deployment zone (rows/columns)?
-- Does one grid token represent an individual soldier, a small squad, or a
-  full company (CoE5 represents a whole unit as one icon)?
-
-**Recommendation:** one token = one unit (a company/squad of many soldiers
-abstracted as a single fighting strength, CoE5-style), not individual
-soldiers. A battle should be maybe 8–20 tokens per side at MVP scale —
-enough for real formation and flanking decisions, not so many it becomes a
-spreadsheet. Battlefield perhaps 9–13 columns wide by 14–20 rows tall
-(taller than wide, to give the bottom-to-top advance room to matter).
-
----
-
-### Q4. MVP faction shortlist
-The full faction list (`05-factions.md`) will eventually be large. Which
-3–4 factions get built first for the vertical slice (Phase 3)? They should
-be chosen to maximize how *different* their playstyles are, to prove the
-framework generalizes early rather than late.
-
-**Recommendation (placeholder, needs your call):** one channeling-heavy
-faction (White Tower or Black Tower), one anti-channeling martial faction
-(Children of the Light or a Borderland nation), one Shadow faction
-(Trollocs/Dreadlords), and one terrain/skirmish specialist (Aiel). That
-spread exercises: magic-as-core-mechanic, magic-as-threat-to-defend-against,
-horde/attrition play, and terrain-dependent play — four very different
-tactical-layer experiences from one framework.
-
----
 
 ### Q5. Setting anchor point in WoT continuity
 - **A — A specific pre-established point** (e.g., just before *the Eye of
@@ -114,22 +37,14 @@ Is the map the whole continent (all of Randland), or a bounded region
 
 **Recommendation:** start with a bounded region for the vertical slice
 (Phase 3) — small enough to fully populate with provinces/resources without
-years of content work, large enough that the MVP factions all have a
-reason to border each other. Expand the map in Phase 5 alongside faction
-expansion. A likely first region: the Borderlands + northern Blight edge +
-a slice of the central nations, since it naturally includes Shadow
-incursion, Borderland defenders, and reachable White Tower/Black Tower
-territory.
-
----
-
-### Q7. Engine / tech stack direction
-This only needs a *direction*, not a final commitment (Phase 2 prototyping
-will validate it). See `docs/technical-design/01-tech-stack-options.md` for
-the actual tradeoff writeup — this entry just tracks that a decision is
-pending and needs your input, since it has real workflow implications
-(what languages you'll be reading/writing, how content gets authored, how
-it gets distributed).
+years of content work, large enough that the MVP factions
+(White Tower, Whitecloaks, Aiel, Shadow — see Q4, resolved) all have a
+reason to border each other. A likely first region: the Borderlands +
+northern Blight edge + a slice of the central nations, since it naturally
+includes Shadow incursion, a Whitecloak presence, and reachable White
+Tower territory. Aiel territory borders the Waste, which may argue for
+shifting the region south/west instead — worth deciding alongside actual
+map layout work.
 
 ---
 
@@ -152,4 +67,33 @@ forgotten, not because it needs resolving today.
 
 ## Resolved
 
-*(none yet)*
+### Q1. Battle pacing model
+**Decision: Real-time with pause** (classic Total War model). The player
+can pause at any time to survey the field and queue orders, then unpause
+to watch them play out; combat, movement, and casting all happen on a
+continuous clock rather than in discrete resolved rounds.
+
+This was the opposite of the drafted recommendation (turn-based
+simultaneous resolution), which changes both the battle-layer design and
+the simulation architecture materially — see the rewritten
+`04-tactical-battle-layer.md` and
+`docs/technical-design/04-battle-simulation-design.md`, and
+`docs/decisions/0002-real-time-with-pause-battle-pacing.md`.
+
+### Q2. Grid geometry
+**Decision: Hex grid.** Prioritizes flanking/movement feel over the extra
+tooling cost. See the rewritten `04-tactical-battle-layer.md` and
+`docs/decisions/0003-hex-grid.md`.
+
+### Q4. MVP faction shortlist
+**Decision: White Tower (Aes Sedai), Children of the Light (Whitecloaks),
+Aiel clans, Shadow (Trollocs/Dreadlords).** Black Tower moves to the
+post-MVP faction list — White Tower alone covers the "channeling as core
+mechanic" slot for the vertical slice. See the updated `05-factions.md`
+and `docs/decisions/0004-mvp-faction-shortlist.md`.
+
+### Q7. Engine / tech stack direction
+**Decision: Web stack — TypeScript + PixiJS.** Content ships as plain JSON
+with no engine-specific import step; distribution is a browser link.
+See the updated `docs/technical-design/01-tech-stack-options.md` and
+`docs/decisions/0005-tech-stack-typescript-pixijs.md`.

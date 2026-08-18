@@ -19,9 +19,13 @@ against. Nothing gets built until Phase 1's core decisions are locked,
 because the tactical battle layer in particular is a novel mechanic — if we
 get the shape of it wrong, no amount of code quality saves it.
 
-- [ ] Resolve the open questions in `docs/game-design/01-open-questions.md`
-      (battle pacing model, grid geometry, MVP faction shortlist, strategic
-      map scale, campaign structure, engine direction)
+- [x] Resolve the highest-leverage open questions: battle pacing (real-time
+      with pause), grid geometry (hex), MVP faction shortlist (White Tower,
+      Whitecloaks, Aiel, Shadow), tech stack direction (TypeScript +
+      PixiJS) — see `docs/decisions/0002` through `0005`
+- [ ] Resolve the remaining open questions in
+      `docs/game-design/01-open-questions.md` (setting anchor point,
+      strategic map scale, IP/licensing posture)
 - [ ] Lock the strategic layer design (`03-strategic-layer.md`)
 - [ ] Lock the tactical battle layer design (`04-tactical-battle-layer.md`)
       — this is the highest-risk/highest-value doc in the project

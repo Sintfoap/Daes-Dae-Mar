@@ -1,9 +1,9 @@
 # Factions
 
-> Status: Draft — MVP shortlist depends on Q4 in `01-open-questions.md`.
-> Entries below are ordered roughly by likely priority, not canon
-> importance. Each entry is a brief; full unit rosters live in
-> `07-units.md` once a faction is greenlit for build.
+> Status: Draft — **MVP shortlist decided:** White Tower, Children of the
+> Light, Aiel, Shadow (see `docs/decisions/0004-mvp-faction-shortlist.md`).
+> Each entry below is a brief; full unit rosters live in `07-units.md` once
+> a faction is greenlit for build.
 
 ## What makes a faction a faction here
 
@@ -20,7 +20,7 @@ answer to all four of these, or it isn't ready to design units for yet:
    matched cost (taint, fragility, isolation, moral cost). A faction with
    no downside is a design bug.
 
-## MVP candidates (recommended in Q4)
+## MVP factions (locked — `docs/decisions/0004-mvp-faction-shortlist.md`)
 
 ### White Tower (Aes Sedai)
 - **Power source:** Saidar channeling, organized by Ajah specialization
@@ -34,17 +34,6 @@ answer to all four of these, or it isn't ready to design units for yet:
 - **Risk/cost:** Saidar burnout risk on overreach; politically fractious
   (Black Ajah subversion risk, see `03-strategic-layer.md`); relatively
   weak in raw troop numbers.
-
-### Black Tower (Asha'man)
-- **Power source:** Saidin channeling, explicitly martial (trained as
-  soldiers first, channelers second).
-- **Strategic hook:** Fast-growing military power built around
-  channeler-soldiers; aggressive recruitment.
-- **Tactical hook:** Channelers integrated directly into the battle line
-  rather than protected in the rear — high offense, high risk.
-- **Risk/cost:** Taint accumulation is a constant, visible countdown;
-  a Black Tower channeler pushed too hard is a long-term liability, not
-  just a battlefield casualty.
 
 ### Children of the Light (Whitecloaks)
 - **Power source:** None — explicitly zero channelers, ever. Strength is
@@ -90,6 +79,19 @@ answer to all four of these, or it isn't ready to design units for yet:
 Briefs kept short — these get full treatment when they enter the build
 queue.
 
+- **Black Tower (Asha'man):** Saidin channeling, explicitly martial
+  (trained as soldiers first, channelers second); strategic hook is
+  fast-growing military power built around channeler-soldiers and
+  aggressive recruitment; tactically, channelers are integrated directly
+  into the battle line rather than protected in the rear — high offense,
+  high risk. Taint accumulation is a constant, visible countdown; a Black
+  Tower channeler pushed too hard is a long-term liability, not just a
+  battlefield casualty. Deferred from the MVP shortlist (see
+  `docs/decisions/0004-mvp-faction-shortlist.md`) — White Tower alone
+  covers "channeling as core mechanic" for the vertical slice, but Black
+  Tower is the faction that will most directly exercise the taint/madness
+  mechanics in `06-magic-and-channeling.md`, so it's a strong Phase 5
+  priority.
 - **Seanchan (Ever Victorious Army):** Conquest-and-collar strategic hook
   (capturing enemy channelers converts them to damane); disciplined heavy
   infantry/cavalry plus damane-as-ranged-artillery tactically; exotic

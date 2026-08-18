@@ -1,9 +1,12 @@
 # Tech Stack Options
 
-> Status: Draft — needs your decision (Q7 in
-> `docs/game-design/01-open-questions.md`). This doc lays out the
-> tradeoffs; Phase 2 prototyping should validate the choice with real code
-> before Phase 3 commits to it for good.
+> Status: **Decided.** Direction: TypeScript + PixiJS (Candidate B below).
+> See `docs/decisions/0005-tech-stack-typescript-pixijs.md`. Phase 2
+> prototyping should validate this choice with real code — in particular,
+> hex-grid tooling and the real-time-with-pause tick loop
+> (`docs/technical-design/04-battle-simulation-design.md`) — before Phase 3
+> commits to it for good. The rest of this doc is kept as-is for the
+> record of the tradeoff that was weighed.
 
 ## What the game actually needs from an engine
 
@@ -73,29 +76,25 @@ no engine-specific import step.
 actually needs, with a lighter footprint and no licensing overhead to
 track.
 
-## Recommendation
+## Decision
 
-Between A and B specifically (both are genuinely good fits — this is a
-real decision, not a formality):
-
-- If you'd rather work in a real game engine, with the strongest built-in
-  2D/grid tooling and a native desktop app as the default output: **Godot
-  (C#)**. C# over GDScript specifically because the simulation layers
-  (deterministic, data-schema-driven) benefit from static typing.
-- If you'd rather work in a web-native stack, want zero-install
-  shareability by default, and want content files to be plain JSON with
-  no engine import step: **TypeScript + PixiJS**.
-
-Both satisfy the architecture in `00-architecture-overview.md` equally
-well — this is a workflow/distribution preference, not a capability
-gap. Worth deciding based on which stack you'd rather spend time reading
-and writing, since that's the more durable factor over the life of the
-project.
+**TypeScript + PixiJS.** Both A and B satisfied the architecture in
+`00-architecture-overview.md` equally well — this came down to a
+workflow/distribution preference: zero-install browser distribution for
+playtesters, and content files as plain JSON with no engine-specific
+import step. See `docs/decisions/0005-tech-stack-typescript-pixijs.md`
+for the full rationale and consequences.
 
 ## Open items
 
-- Final decision (Q7) — yours to make; Phase 2 should prototype the
-  tactical battle grid in the chosen stack specifically to confirm it
-  before Phase 3 commits.
-- Once decided, this doc should be updated to record the choice and
-  rationale, and a corresponding ADR added to `docs/decisions/`.
+- Hex-grid tooling (`docs/decisions/0003-hex-grid.md`) and the
+  fixed-timestep tick loop
+  (`docs/technical-design/04-battle-simulation-design.md`) will need more
+  hand-building in this stack than Godot would have provided out of the
+  box — real Phase 2 prototyping work, not a blocker.
+- Desktop packaging (if wanted later) is deferred — not needed for the
+  browser-first plan; revisit with something like Tauri or Electron only
+  if it becomes a priority.
+- Specific libraries beyond PixiJS (UI framework, state management, build
+  tooling) are unspecified — a Phase 2 decision to make once the tactical
+  prototype is underway, not a Phase 1 blocker.
