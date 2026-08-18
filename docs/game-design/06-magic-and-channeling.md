@@ -70,14 +70,39 @@ the same options even where their raw categories overlap.
 
 ## Relics
 
-- **Angreal / sa'angreal:** amplify a channeler's effective strength —
-  modeled as equipment that raises Power reserve and/or weave strength.
+**Decision (`docs/decisions/0010-relic-equipment-system.md`):** relics are
+equipment for Hero/Commander-archetype units generally, not just
+channelers — split into two access tiers, not just two canon categories.
+
+- **Angreal / sa'angreal — channeler-gated.** Amplify a channeler's
+  effective strength (Power reserve and/or weave strength). Only a
+  Channeler-archetype unit can socket one, which restricts them to
+  channeling factions (White Tower, Black Tower, Shadow, Seanchan). A
+  non-channeling faction that finds one can't use it personally — trade
+  it, hold it as leverage, or destroy it on principle (Whitecloaks).
   Rare, strategic-layer resources (see `08-economy-and-resources.md`).
-- **Ter'angreal:** fixed, specific effects rather than raw amplification —
-  modeled as unique items/abilities, not a stat boost. Each one is
-  effectively a small, bespoke rule, which is intentional — it's where
-  flavorful one-off mechanics belong instead of bloating the general
-  weave list.
+- **Ter'angreal — universal by default.** Fixed, specific effects rather
+  than raw amplification. Usable by **any** Hero/Commander unit
+  regardless of channeling ability, unless a specific item's own
+  definition restricts it — this is what gives non-channeling factions a
+  real reason to hunt relics too. Canon-grounded example: the foxhead
+  medallion (blocks the One Power from affecting its wearer) needs no
+  channeling ability at all, and is a natural Whitecloak item. Each
+  ter'angreal is effectively a small, bespoke rule, which is intentional —
+  it's where flavorful one-off mechanics belong instead of bloating the
+  general weave list.
+
+**Faction relic flavor** (first pass, to refine as specific items get
+authored): White Tower is best at safely identifying unknown relics
+(Brown Ajah scholarship) and holds the singular **Oath Rod**
+(`docs/decisions/0009-white-tower-political-system.md`); Black Tower
+attunes faster but riskier; the Shadow has access to a unique
+Age-of-Legends/corrupted relic tier at a taint cost; Seanchan's a'dam
+collar *is* their signature ter'angreal, and they're generally better at
+finding/cataloguing relics (Seekers); Aiel territory is unusually
+relic-rich even though Aiel custom keeps most Aiel from personally using
+what they find, a deliberate trade hook with other factions; Borderlands
+and Andor have no special relic rule.
 
 ## Shielding, Circles, and Rituals
 
@@ -190,6 +215,23 @@ outcome from Kill: an order to subdue rather than destroy a Shielded or
 broken (routing) enemy channeler, turning them into a Prisoner instead of
 a casualty. See `04-tactical-battle-layer.md` for how this is expressed as
 a battle order.
+
+## Circle-workings (lighter than Rituals, faction-specific)
+
+Not every use of a linked Circle needs the full weight of a fixed-headcount
+Ritual (above). Some factions get smaller, faster circle-workings with
+their own flavor — these don't require a specific participant composition
+the way Stilling/Gentling or Turning do, just a Circle of a reasonable
+size, and their effects are milder and reversible/temporary rather than
+permanent. White Tower's first pass (`docs/decisions/0009-white-tower-political-system.md`,
+full description in `05-factions.md`): **Binding Oath** (the singular Oath
+Rod makes a willing alliance unbreakable — a strategic-layer action, not a
+battlefield one), **Gateway Network** (a semi-permanent Traveling link
+between two provinces), and **Tower Ward** / **Mass Healing** (temporary
+province defense and post-battle recovery speed). Other factions may earn
+their own circle-workings as their deep-dives happen — this category
+exists specifically so not every magical action has to be either a basic
+Weave or a 13-person Ritual.
 
 ## Detecting and countering channelers
 

@@ -144,13 +144,25 @@ Tower deployment, not an incidental one.
 
 ## Heroes and named units
 
-Ta'veren, Wolfbrothers, Forsaken, clan chiefs, and similar named
-individuals are Hero/Commander archetype units with:
+Ta'veren, Wolfbrothers, Forsaken, clan chiefs, the Amyrlin Seat, and
+similar named individuals are Hero/Commander archetype units with:
 - A unique ability not available to generic units of their type
 - A morale-anchor effect on nearby friendly units
 - Campaign-persistence — heroes can be lost permanently (death, capture,
-  stilling/gentling) with real strategic consequences, which is what makes
-  them worth protecting rather than just strong stat sticks
+  stilling/gentling, Turning) with real strategic consequences, which is
+  what makes them worth protecting rather than just strong stat sticks
+- **Relic slots** (`docs/decisions/0010-relic-equipment-system.md`): every
+  Hero/Commander unit can equip ter'angreal regardless of channeling
+  ability; only those that are also Channeler-archetype can equip
+  angreal/sa'angreal. A high-tier named hero may get a second slot.
+
+**Worked example: the Amyrlin Seat** (White Tower, Hero/Commander +
+Channeler) — a unique unit tagged with a **home Ajah**, which sets the
+faction-wide Ajah Lean (`05-factions.md`'s Internal politics section,
+`docs/decisions/0009-white-tower-political-system.md`). Losing her
+triggers a succession event that can change the Lean entirely, which is
+what makes her the single highest-stakes protection target in a White
+Tower army — more than her personal stats would suggest.
 
 Full hero design (leveling, acquisition, loss consequences) belongs in
 `09-campaign-and-progression.md`.

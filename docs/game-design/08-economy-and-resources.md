@@ -20,7 +20,7 @@ strategic layer turns into spreadsheet management.
 | **Food** | Provisioning | Army upkeep on campaign, siege attrition, growth |
 | **Influence** | Political capital, renown | Faction-specific: White Tower recruitment/politics, diplomacy, hero recruitment |
 | **Taint / Corruption** | Accumulated cost of channeling saidin or Shadow corruption | Not spent — a rising liability tracked per-channeler and, for the Shadow, potentially per-province (Blight spread) |
-| **Relics** (angreal/sa'angreal/ter'angreal) | Rare magical items | Equipment-slot resource for channelers; acquired, not manufactured, in most cases |
+| **Relics** (angreal/sa'angreal/ter'angreal) | Rare magical items | Equipment-slot resource for Hero/Commander units — angreal/sa'angreal channeler-gated, ter'angreal usable by any Hero/Commander (see `06-magic-and-channeling.md` and `docs/decisions/0010-relic-equipment-system.md`); acquired, not manufactured, in most cases |
 | **Darkfriend Network (Agents)** — Shadow-exclusive | Sleeper agents planted inside enemy provinces/factions | Cashed in for intelligence/resources, or spent to trigger an enemy unit or province defection event; the acquisition path for Black Ajah specifically (see below) |
 
 Four spendable resources plus one liability-resource, common to every
@@ -55,8 +55,13 @@ see `docs/technical-design/02-data-driven-content.md`.
 
 Per the strategic-layer design goal that no two factions play the same:
 
-- **White Tower:** Influence-heavy; can achieve strategic goals by
-  spending Influence instead of moving armies.
+- **White Tower:** Influence-heavy, and recruitment itself runs through
+  alliances rather than Gold alone — allied nations send novices into the
+  training pipeline on top of tribute and borrowed levies
+  (`docs/decisions/0009-white-tower-political-system.md`), so growing the
+  alliance network compounds into growing the Tower's own future roster,
+  not just immediate income. Internally, per-Ajah **Favor** functions as
+  a political sub-resource feeding the faction's Unity/schism risk.
 - **Seanchan:** Converts captured enemy channelers into a resource
   (damane) rather than paying Relic-equivalent costs for channeling power
   — a unique acquisition path, not just a discount.
@@ -68,7 +73,10 @@ Per the strategic-layer design goal that no two factions play the same:
   inversion of how the rest of the roster plays the economy.
 - **Aiel:** Low Gold/Food dependency relative to settled nations (raiding
   and clan support rather than province economies), high dependency on
-  Influence-equivalent (honor/clan standing) instead.
+  Influence-equivalent (honor/clan standing) instead; also sits on
+  unusually relic-rich territory (`docs/decisions/0010-relic-equipment-system.md`),
+  giving other factions a reason to court Aiel access even though Aiel
+  custom keeps most Aiel from using what they find themselves.
 
 ## Prisoners are a status, not a resource
 

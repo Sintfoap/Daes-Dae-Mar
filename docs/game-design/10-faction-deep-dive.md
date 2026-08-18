@@ -53,28 +53,27 @@ them in one pass — these are meant to be argued through, not checklisted.
   battlefield is influence, not infantry" — does that feel right, or is
   the fantasy actually more about protecting a handful of irreplaceable
   people through a hostile world?
-- Should the player pick an **Ajah alignment for the whole campaign** (a
-  CoE5-style sub-faction variant — "play as the Red Ajah" with a distinct
-  ruleset), or manage all Ajahs as **internal factions within White
-  Tower**, each pulling in a different direction (much more political
-  intrigue, much more complexity)?
+- **Resolved (0009):** neither — the Ajah Lean is tied to whichever Ajah
+  the sitting Amyrlin Seat came from (a Siuan-Sanche-and-the-Blue-Ajah
+  pattern), with a matched bonus/detriment against a rival Ajah, rather
+  than a static player pick or a full set of parallel sub-faction
+  rulesets. See `05-factions.md`'s Internal politics section.
 
 ### 2. Strategic layer specifics
-- Recruitment: do new Aes Sedai show up like a normal recruited unit
-  (spend Gold, get a unit), or does the game model the Accepted→Aes Sedai
-  training pipeline as a multi-turn background process, reflecting how
-  rare and slow-grown they're supposed to be? The second option makes
-  White Tower's army genuinely hard to rebuild after losses — is that the
-  intended feel?
-- What does the **Amyrlin Seat** represent mechanically — a unique
-  hero/commander unit, a faction-wide passive bonus, both? What happens
-  strategically if she's lost (captured, killed, Stilled)?
-- Is there an internal-**unity** resource, separate from Influence, that
-  Black Ajah subversion and Ajah political friction drain — and if it
-  bottoms out, does something dramatic happen (a scripted "Tower schism"
-  event that could split the player's own faction, echoing the books)?
-  Worth floating even if it's a Phase 5+ idea, since it changes how
-  fragile White Tower is meant to feel.
+- Recruitment: **resolved (0009)** — runs through the alliance network.
+  Allied nations send novices into the training pipeline alongside gold
+  tribute and borrowed levies, so a bigger alliance web compounds into
+  faster long-term growth, not just immediate income.
+- **Resolved (0009):** the Amyrlin Seat is a unique Hero/Commander unit
+  whose home Ajah sets the faction-wide Lean. Losing her (death, capture,
+  Stilling, retirement) triggers a succession event that can change the
+  Lean entirely.
+- **Resolved (0009):** yes — **Unity** is the aggregate-Favor stability
+  stat, and a badly resolved succession (or a succession while Unity is
+  already low) can trigger a **Tower schism**, splitting the faction into
+  two rival Amyrlins rather than just weakening it. A low-Favor Ajah is
+  also a preferential Darkfriend Network target, tying White Tower's
+  internal politics directly to the Shadow's existing subversion mechanic.
 - **Resolved (0008):** Bonded Warders are an optional upgrade, not every
   Aes Sedai's default, and losing one does cut both ways — a real
   mutual-loss penalty on the pair, not just a stat loss on one side.
@@ -110,11 +109,20 @@ them in one pass — these are meant to be argued through, not checklisted.
   Seanchan expansion even at the cost of other goals?
 
 ### 6. Risk/cost, pressure-tested
-- Current stated risk: burnout, political fracture risk, weak raw
-  numbers. Is "weak raw numbers" actually enforced by the roster answer
-  in §3, or does it need a harder cap (e.g., a strategic-layer limit on
-  how many Aes Sedai can exist at once, tied to the training-pipeline
-  question above)?
+- Current stated risk: burnout, weak raw numbers. Is "weak raw numbers"
+  actually enforced by the roster answer in §3, or does it need a harder
+  cap (e.g., a strategic-layer limit on how many Aes Sedai can exist at
+  once, tied to the training-pipeline question above)?
+- **Resolved (0009):** "political fracture risk" is now a concrete
+  mechanic (Favor/Unity/schism), not just a stated theme — see §2. Still
+  open: exact Favor/Unity numbers and decay rates, and the exact
+  succession-resolution formula (Favor-weighted lottery vs. player-driven
+  contest vs. hybrid) — both Phase 6 balance questions.
+- New from this round, still open: the **win condition** ("Unite the
+  Bound," `09-campaign-and-progression.md`) needs its exact
+  alliance-coverage threshold defined, and it's worth checking whether it
+  actually rewards the political playstyle enough relative to a
+  conquest-focused White Tower run, once both are prototyped.
 
 ---
 

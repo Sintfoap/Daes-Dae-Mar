@@ -28,8 +28,12 @@ answer to all four of these, or it isn't ready to design units for yet:
 - **Power source:** Saidar channeling, organized by Ajah specialization
   (Green = battle, Red = anti-male-channeler, Brown = knowledge/utility,
   Blue = causes/intrigue, etc.)
-- **Strategic hook:** Recruits and moves by influence and politics as much
-  as by gold; can act at range through Aes Sedai sent to other courts.
+- **Strategic hook:** A political-alliance loop (`docs/decisions/0009-white-tower-political-system.md`):
+  ally with a nation to gain gold tribute, borrowed levies, and a trickle
+  of novices into the Aes Sedai training pipeline; a bigger alliance
+  network grows the Tower's own future strength as much as it grows
+  immediate resources. Conquest stays viable, but the political path is
+  the faction's strongest and most distinctive one.
 - **Tactical hook:** A four-tier roster (`07-units.md`'s White Tower
   worked example, `docs/decisions/0008-white-tower-warder-tiers.md`) —
   cheap Tower Guard and elite Warder Companies do the actual
@@ -38,11 +42,79 @@ answer to all four of these, or it isn't ready to design units for yet:
   personally Bonded Warder as a rare, high-value/high-risk upgrade.
   Battles are about protecting that caster minority behind a real wall,
   not attrition between two equal-scale armies.
-- **Risk/cost:** Saidar burnout risk on overreach; politically fractious
-  (Black Ajah subversion risk, see `03-strategic-layer.md`); Aes Sedai are
-  expensive and slow to replace relative to the mundane tiers, so losses
-  among the caster minority are felt for a long time, not just for one
-  battle.
+- **Risk/cost:** Saidar burnout risk on overreach; Aes Sedai are expensive
+  and slow to replace relative to the mundane tiers, so losses among the
+  caster minority are felt for a long time; and — the faction's signature
+  risk — internal Ajah politics (below) can spiral into a Tower schism
+  that splits the player's own faction, not just weaken it.
+
+#### Internal politics: the Ajah Lean
+
+White Tower doesn't pick an Ajah specialization once at campaign start —
+it inherits one from whoever holds the **Amyrlin Seat**, the faction's
+unique Hero/Commander unit, the same way Siuan Sanche's Amyrlinship
+favored the Blue Ajah because that's where she came from.
+
+- The current Amyrlin's **home Ajah** sets the **Ajah Lean**: that Ajah
+  gets a mechanical bonus (recruitment speed, a strategic action, a
+  combat stat — flavored per Ajah), while its **rival Ajah** takes a
+  matched detriment. A first-pass rivalry pairing (adjustable, not
+  locked): Blue↔Red (outward political engagement vs. narrow inward
+  focus), Green↔Brown (martial activity vs. scholarly withdrawal),
+  White↔Gray (cold logic vs. emotional mediation). Yellow leans smaller
+  either way, reflecting healers being broadly valued across Ajahs rather
+  than politically opposed to anyone.
+- Each Ajah tracks a **Favor** meter — political standing within the
+  Tower. The Lean pushes the Amyrlin's home Ajah's Favor up and the rival
+  Ajah's Favor down over time. A rival Ajah whose Favor bottoms out
+  becomes fertile ground for Shadow subversion — a disaffected Ajah is
+  exactly what the Darkfriend Network (`08-economy-and-resources.md`) is
+  built to exploit, giving the Shadow a concrete reason to target whichever
+  Ajah the current Lean is squeezing.
+- Overall **Unity** (an aggregate of how imbalanced Favor has become
+  across all Ajahs) is the faction's core stability stat. Let it collapse
+  and a **Tower schism** triggers.
+- **Succession:** when the Amyrlin is lost (death, Stilling, capture, or
+  retirement), a succession event draws candidates from the Ajahs with
+  the strongest current standing. The player can spend Influence to back
+  a preferred candidate, or let it resolve on Favor alone — either way,
+  the winner's home Ajah becomes the new Lean, which can swing the whole
+  faction's specialization in one event.
+- **Schism (failure state):** a badly resolved succession (a near-tied
+  contest, or a succession happening while Unity is already critically
+  low) splits the Tower instead of resolving cleanly — some Aes Sedai,
+  provinces, and alliances break off into a rival splinter faction under
+  a second Amyrlin, echoing the books' actual Tower split. This is White
+  Tower's version of a catastrophic own-goal, parallel to how badly
+  misplaying the Shadow's Darkfriend Network gets agents purged.
+
+This makes protecting the Amyrlin Seat — and managing who's positioned to
+replace her — a real strategic thread distinct from just "don't lose
+units," and it's what gives the political game real stakes instead of
+being a pure resource-optimization exercise.
+
+#### New rituals (lighter circle-workings, not fixed-headcount Rituals)
+
+Distinct from the 13-channeler Stilling/Turning pattern (ADR 0007) so that
+pattern stays special — these are smaller circle-workings available to
+White Tower specifically:
+
+- **Binding Oath** — uses the **Oath Rod**, a single unique named
+  ter'angreal that exists once on the whole map. Spending it on a willing
+  ally makes that alliance mechanically unbreakable (they cannot declare
+  war on or defect from White Tower while bound) — the mechanical payoff
+  of the whole political game, turning your best alliances into permanent
+  assets instead of standing risks. Being singular and contested, the
+  Oath Rod is also a natural heist target — losing it to the Shadow (who
+  could theoretically use a forced version to bind an unwilling victim,
+  a much darker act) is a real campaign threat, not just flavor.
+- **Gateway Network** — invest several turns and a linked circle to open
+  a semi-permanent Traveling link between two owned/allied provinces,
+  solving the real structural weakness of a geographically scattered
+  alliance faction: reinforcing a distant ally in time.
+- **Tower Ward** / **Mass Healing** — smaller circle-workings for
+  temporary province defense and post-battle recovery speed, Ajah-lean
+  flavored (a Yellow Lean strengthens Mass Healing).
 
 ### Children of the Light (Whitecloaks)
 - **Power source:** None — explicitly zero channelers, ever. Strength is

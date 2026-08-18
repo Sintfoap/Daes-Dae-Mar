@@ -27,11 +27,15 @@ validates the base sandbox loop.
 ## Victory conditions (draft, pending A/B/C decision above)
 
 - Territorial control threshold within the bounded map
-- Faction-specific alternate win conditions (e.g., White Tower "restore
-  order," Shadow "corrupt/conquer past a threshold," matching each
-  faction's strategic hook from `05-factions.md`) — flagged as a strong
-  option for making victory itself feel asymmetric, not just the path
-  there
+- Faction-specific alternate win conditions, matching each faction's
+  strategic hook from `05-factions.md` — flagged as a strong option for
+  making victory itself feel asymmetric, not just the path there. First
+  concrete example, White Tower's **"Unite the Bound"**
+  (`docs/decisions/0009-white-tower-political-system.md`): win via
+  alliance-coverage of the map past a threshold (weighted toward
+  Oath-bound alliances), or by leading the largest coalition at this
+  campaign clock's endgame. Shadow's equivalent ("corrupt/conquer past a
+  threshold") is still a placeholder pending its own deep-dive.
 - A turn-limit scoring fallback if no faction reaches a hard win condition
 
 ## Heroes and persistence
@@ -44,6 +48,13 @@ validates the base sandbox loop.
 - Recommend heroes gain experience/veterancy over a campaign (a light
   leveling system) so a surviving hero is worth protecting beyond their
   base stats — exact leveling depth is a Phase 5 content question.
+- **Faction-specific loss consequences** can go beyond "the hero is gone."
+  White Tower's Amyrlin Seat (`docs/decisions/0009-white-tower-political-system.md`)
+  is the first example: losing her triggers a **succession** event whose
+  outcome can reshape the whole faction's Ajah Lean, and a badly resolved
+  succession can escalate into a **Tower schism** — the faction splitting
+  into two rival remnants rather than just losing a unit. Other factions
+  may earn their own hero-loss escalations as their deep-dives happen.
 
 ### Prisoners
 

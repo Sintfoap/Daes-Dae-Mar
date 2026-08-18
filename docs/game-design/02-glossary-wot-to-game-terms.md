@@ -11,8 +11,9 @@ can use WoT terms without re-explaining them.
 | Saidar | The female half of the Power. Untainted, but overreach risks burnout | `06-magic-and-channeling.md` |
 | Channeler | Any unit that can draw on the One Power — a distinct unit archetype, not a faction-specific unit | `07-units.md` |
 | Weave | A specific effect a channeler can produce (a "spell") — offense, control, utility, or detection | `06-magic-and-channeling.md` |
-| Angreal / Sa'angreal | Relic items that amplify a channeler's strength — a strategic resource/equipment slot | `06-magic-and-channeling.md`, `08-economy-and-resources.md` |
-| Ter'angreal | Relic items with a fixed, specific effect (not raw amplification) — unique items/abilities | `06-magic-and-channeling.md` |
+| Angreal / Sa'angreal | Relic items that amplify a channeler's strength — channeler-gated equipment, restricted to channeling factions | `06-magic-and-channeling.md`, `08-economy-and-resources.md`, `docs/decisions/0010-relic-equipment-system.md` |
+| Ter'angreal | Relic items with a fixed, specific effect (not raw amplification) — usable by any Hero/Commander unit regardless of channeling ability, unless a specific item says otherwise | `06-magic-and-channeling.md`, `docs/decisions/0010-relic-equipment-system.md` |
+| Oath Rod | A single, unique ter'angreal on the whole map; White Tower's Binding Oath ritual uses it to make a willing alliance unbreakable | `05-factions.md`, `docs/decisions/0009-white-tower-political-system.md` |
 | Taint / going mad | The accumulating risk/consequence of channeling saidin | `06-magic-and-channeling.md` |
 | Stilling / gentling | Permanent loss of ability to channel — a fixed-headcount Ritual (13 same-affinity channelers, or a rare solo sa'angreal path) | `06-magic-and-channeling.md` |
 | Shielding | Temporary, reversible cut-off from the Power by a single sufficiently strong channeler — a contested check, not a ritual | `06-magic-and-channeling.md` |
@@ -22,6 +23,9 @@ can use WoT terms without re-explaining them.
 | Darkfriend Network | Shadow-exclusive strategic resource: planted agents in enemy territory, cashed in for intel/resources or spent to trigger defections | `08-economy-and-resources.md`, `05-factions.md` |
 | The True Power | The Dark One's own power — extremely rare, extremely risky, Shadow-exclusive | `06-magic-and-channeling.md` |
 | White Tower / Aes Sedai | Female channeler faction; political + magical power, Ajah specializations | `05-factions.md` |
+| Ajah Lean | The Ajah specialization White Tower currently favors, set by the sitting Amyrlin's home Ajah, not a static player choice | `05-factions.md`, `docs/decisions/0009-white-tower-political-system.md` |
+| Ajah Favor | Per-Ajah political standing meter; the Lean raises the Amyrlin's home Ajah's Favor and lowers a rival Ajah's | `05-factions.md`, `docs/decisions/0009-white-tower-political-system.md` |
+| Tower schism | White Tower's failure state: a badly resolved succession (or collapsed Unity) splits the faction into two rival Amyrlins | `05-factions.md`, `09-campaign-and-progression.md`, `docs/decisions/0009-white-tower-political-system.md` |
 | Black Tower / Asha'man | Male channeler faction; martial focus, elevated madness stakes | `05-factions.md` |
 | Black Ajah | Aes Sedai secretly serving the Shadow — recruited via the Shadow's Darkfriend Network, then activated into fieldable Shadow channeler units (notably as Turning-ritual participants); not a separate playable faction | `05-factions.md`, `06-magic-and-channeling.md`, `08-economy-and-resources.md` |
 | Children of the Light / Whitecloaks | Zealous anti-channeler military order; no channelers, ever | `05-factions.md` |
