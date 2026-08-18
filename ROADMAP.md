@@ -29,8 +29,11 @@ get the shape of it wrong, no amount of code quality saves it.
 - [ ] Lock the strategic layer design (`03-strategic-layer.md`)
 - [ ] Lock the tactical battle layer design (`04-tactical-battle-layer.md`)
       — this is the highest-risk/highest-value doc in the project
-- [ ] Lock the MVP faction list and write full faction briefs
-      (`05-factions.md`)
+- [x] Lock the MVP faction list (`docs/decisions/0004-mvp-faction-shortlist.md`)
+- [ ] Work through `docs/game-design/10-faction-deep-dive.md` for each MVP
+      faction (plus Black Tower) and fold resolved answers back into
+      `05-factions.md`, `06-magic-and-channeling.md`, `07-units.md`, and
+      new ADRs where a question was genuinely contested
 - [ ] Lock the channeling/magic system rules (`06-magic-and-channeling.md`)
 - [ ] Define the unit framework and a first-pass roster per MVP faction
       (`07-units.md`)

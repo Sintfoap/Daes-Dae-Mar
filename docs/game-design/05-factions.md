@@ -3,7 +3,9 @@
 > Status: Draft — **MVP shortlist decided:** White Tower, Children of the
 > Light, Aiel, Shadow (see `docs/decisions/0004-mvp-faction-shortlist.md`).
 > Each entry below is a brief; full unit rosters live in `07-units.md` once
-> a faction is greenlit for build.
+> a faction is greenlit for build. For the deeper discussion these briefs
+> are drawn from (and still owe answers to), see
+> `10-faction-deep-dive.md`.
 
 ## What makes a faction a faction here
 
@@ -128,6 +130,14 @@ queue.
   hero-tier units that can appear attached to the Shadow faction (or
   independently) as rare, campaign-defining threats. See `07-units.md` and
   `09-campaign-and-progression.md`.
+
+## Deep-dive discussion
+
+`10-faction-deep-dive.md` has a longer set of questions per faction (six
+lenses: identity, strategic specifics, tactical specifics, rituals
+interaction, relationships, risk/cost pressure-testing) meant to be argued
+through rather than checklisted. Full depth for the four MVP factions plus
+Black Tower; lighter forward-looking questions for everyone else.
 
 ## Faction design checklist
 

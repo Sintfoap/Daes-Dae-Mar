@@ -34,6 +34,7 @@ resources.
 | Understand the pitch and design pillars | [`docs/game-design/00-pillars-and-pitch.md`](docs/game-design/00-pillars-and-pitch.md) |
 | See what's still undecided and weigh in | [`docs/game-design/01-open-questions.md`](docs/game-design/01-open-questions.md) |
 | See the full design documentation | [`docs/game-design/`](docs/game-design/) |
+| Work through each faction's design in depth | [`docs/game-design/10-faction-deep-dive.md`](docs/game-design/10-faction-deep-dive.md) |
 | See the technical/architecture documentation | [`docs/technical-design/`](docs/technical-design/) |
 | See the phased plan and current TODOs | [`ROADMAP.md`](ROADMAP.md) |
 | Understand a specific past decision | [`docs/decisions/`](docs/decisions/) |
